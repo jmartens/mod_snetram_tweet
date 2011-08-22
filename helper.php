@@ -120,7 +120,7 @@ function generateScript($params, $id = '') {
 	return $script = sprintf(
 		"jQuery.noConflict();\n" .
 		"jQuery(document).ready(function(){\n" .
-		"\tjQuery('#jtweet$id').tweet({\n" .
+		"\tjQuery('#tweet$id').tweet({\n" .
 		"%s\n" .
 		"\t});\n" .
 		"})%s;", join(",\n", $values), $bind
