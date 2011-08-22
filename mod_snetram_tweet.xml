@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.6.0" client="site" method="upgrade">
+    <name>Tweet! for Joomla</name>
+    <author>Jonathan Martens</author>
+    <creationDate>22-Aug-2011</creationDate>
+    <copyright>(C) 2005 Open Source Matters. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>jonathan@snetram.nl</authorEmail>
+    <authorUrl>www.snetram.nl</authorUrl>
+    <version>1.0.0</version>
+    <description>Tweet! for Joomla is an implementation of the Sea of Clouds jQuery Tweet! script. More information on Tweet! can be found at http://tweet.seaofclouds.com.</description>
+    <files>
+        <filename module="mod_snetram_tweet">mod_snetram_tweet.php</filename>
+        <folder>css</folder>
+        <folder>js</folder>
+        <folder>tmpl</folder>
+		<folder>language</folder>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB.mod_snetram_tweet.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="settings" 
+				label="MOD_TWEET4JOOMLA_BASIC_SETTINGS">
+				<field 
+					name="username" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_USERNAME_LABEL" 
+					description="MOD_TWEET4JOOMLA_USERNAME_DESCRIPTION" />
+				<field 
+					name="refresh_interval" 
+					type="text" 
+					default="60"
+					label="MOD_TWEET4JOOMLA_REFRESH_INTERVAL_LABEL" 
+					description="MOD_TWEET4JOOMLA_REFRESH_INTERVAL_DESCRIPTION" />
+			</fieldset>
+            <fieldset 
+				name="displaysettings" 
+				label="MOD_TWEET4JOOMLA_LAYOUT_AND_DISPLAY">
+				<field 
+					name="avatar_size" 
+					type="text" 
+					default="48" 
+					label="MOD_TWEET4JOOMLA_AVATAR_SIZE_LABEL" 
+					description="MOD_TWEET4JOOMLA_AVATAR_SIZE_DESCRIPTION" />
+				<field 
+					name="count" 
+					type="text" 
+					default="5" 
+					label="MOD_TWEET4JOOMLA_COUNT_LABEL" 
+					description="MOD_TWEET4JOOMLA_COUNT_DESCRIPTION" />
+<!--				<field 
+					name="favorites" 
+					type="radio" 
+					label="MOD_TWEET4JOOMLA_TWEETS_OR_FAVORITES_LABEL" 
+					description="MOD_TWEET4JOOMLA_TWEETS_OR_FAVORITES_DESCRIPTION">
+					<option value="false">MOD_TWEET4JOOMLA_TWEETS</option>
+					<option value="true">MOD_TWEET4JOOMLA_FAVORITES</option>
+				</field>-->
+				<field 
+					name="retweets" 
+					type="radio" 
+					default="true" 
+					label="MOD_TWEET4JOOMLA_RETWEETS_LABEL" 
+					description="MOD_TWEET4JOOMLA_RETWEETS_DESCRIPTION">
+					<option value="true">MOD_TWEET4JOOMLA_YES</option>
+					<option value="false">MOD_TWEET4JOOMLA_NO</option>
+				</field>
+					
+				<field 
+					name="template" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_TEMPLATE_LABEL" 
+					description="MOD_TWEET4JOOMLA_TEMPLATE_DESCRIPTION" />
+            </fieldset>			
+			<fieldset name="filtering" 
+				label="MOD_TWEET4JOOMLA_FILTER_SETTINGS">
+				<field 
+					name="query" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_QUERY_LABEL" 
+					description="MOD_TWEET4JOOMLA_QUERY_DESCRIPTION" />
+				<field 
+					name="list" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_LIST_LABEL" 
+					description="MOD_TWEET4JOOMLA_LIST_DESCRIPTION" />
+				<field 
+					name="filter" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_FILTER_LABEL" 
+					description="MOD_TWEET4JOOMLA_FILTER_DESCRIPTION" />
+            </fieldset>
+			<fieldset
+				name="text" 
+				label="MOD_TWEET4JOOMLA_TEXT">
+				<field 
+					name="join_text" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_JOIN_TEXT_LABEL" 
+					description="MOD_TWEET4JOOMLA_JOIN_TEXT_DESCRIPTION" />
+				<field 
+					name="auto_join_text_default" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_AUTO_JOIN_TEXT_DEFAULT_LABEL" 
+					description="MOD_TWEET4JOOMLA_AUTO_JOIN_TEXT_DEFAULT_DESCRIPTION" />
+				<field 
+					name="auto_join_text_ed" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_AUTO_JOIN_TEXTED_LABEL" 
+					description="MOD_TWEET4JOOMLA_AUTO_JOIN_TEXTED_DESCRIPTION" />
+				<field 
+					name="auto_join_text_ing" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_AUTO_JOIN_TEXTING_LABEL" 
+					description="MOD_TWEET4JOOMLA_AUTO_JOIN_TEXTING_DESCRIPTION" />
+				<field 
+					name="auto_join_text_reply" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_AUTO_JOIN_TEXT_REPLY_LABEL" 
+					description="MOD_TWEET4JOOMLA_AUTO_JOIN_TEXT_REPLY_DESCRIPTION" />
+				<field 
+					name="auto_join_text_url" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_AUTO_JOIN_TEXT_URL_LABEL" 
+					description="MOD_TWEET4JOOMLA_AUTO_JOIN_TEXT_URL_DESCRIPTION" />
+				<field 
+					name="loading_text" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_LOADING_TEXT_LABEL" 
+					description="MOD_TWEET4JOOMLA_LOADING_TEXT_DESCRIPTION" />
+				<field 
+					name="intro_text" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_INTRO_TEXT_LABEL" 
+					description="MOD_TWEET4JOOMLA_INTRO_TEXT_DESCRIPTION" />
+				<field 
+					name="outro_text" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_OUTRO_TEXT_LABEL" 
+					description="MOD_TWEET4JOOMLA_OUTRO_TEXT_DESCRIPTION" />
+			</fieldset>
+            <fieldset name="events" label="MOD_TWEET4JOOMLA_EVENTS">
+				<field 
+					name="event-loaded" 
+					type="text" 
+					default=""
+					label="MOD_TWEET4JOOMLA_EVENTS_LOADED_LABEL"
+					desciption="MOD_TWEET4JOOMLA_EVENTS_LOADED_DESCRIPTION" />
+            </fieldset>
+            <fieldset name="scripts" label="MOD_TWEET4JOOMLA_SCRIPTS_AND_CSS_FILES">
+				<field name="" type="info" label="MOD_TWEET4JOOMLA_LOAD_INFO" />
+				<field name="location-css" type="list" default="head" label="MOD_TWEET4JOOMLA_LOAD_CSS" description="MOD_TWEET4JOOMLA_LOAD_CSS_DESCRIPTION">
+					<option value="head">MOD_TWEET4JOOMLA_LOAD_HEAD</option>
+					<option value="body">MOD_TWEET4JOOMLA_LOAD_BODY</option>
+					<option value="no">MOD_TWEET4JOOMLA_NO_LOAD</option>
+				</field>
+				<field name="location-script" type="list" default="head" label="MOD_TWEET4JOOMLA_LOAD_SCRIPT" description="MOD_TWEET4JOOMLA_LOAD_JS_DESCRIPTION">
+					<option value="head">MOD_TWEET4JOOMLA_LOAD_HEAD</option>
+					<option value="body">MOD_TWEET4JOOMLA_LOAD_BODY</option>
+					<option value="no">MOD_TWEET4JOOMLA_NO_LOAD</option>
+				</field>
+            </fieldset>
+            <fieldset 
+				name="general" 
+				label="MOD_TWEET4JOOMLA_GENERAL_SETTINGS">
+	            <field 
+					name="cache" 
+					type="list" 
+					default="0" 
+					label="MOD_TWEET4JOOMLA_CACHING" 
+					description="MOD_TWEET4JOOMLA_CACHING_DESCRIPTION">
+	                <option value="1">MOD_TWEET4JOOMLA_USE_GLOBAL</option>
+	                <option value="0">MOD_TWEET4JOOMLA_NO_CACHING</option>
+	            </field>
+	            <field 
+					name="cache_time" 
+					type="text" default="900" 
+					label="MOD_TWEET4JOOMLA_CACHE_TIME" 
+					description="MOD_TWEET4JOOMLA_CASHE_TIME_DESCRIPTION" />
+	            <field 
+					name="moduleclass_sfx" 
+					type="text" 
+					default="" 
+					label="MOD_TWEET4JOOMLA_CLASS_SUFFIX" 
+					description="PARAMMODULECLASSSUFFIX" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>
