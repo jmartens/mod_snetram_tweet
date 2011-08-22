@@ -7,7 +7,7 @@
     <license>http://www.gnu.org/copyleft/gpl.html</license>
     <authorEmail>jonathan@snetram.nl</authorEmail>
     <authorUrl>www.snetram.nl</authorUrl>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <description>Tweet! for Joomla is an implementation of the Sea of Clouds jQuery Tweet! script. More information on Tweet! can be found at http://tweet.seaofclouds.com.</description>
     <files>
         <filename module="mod_snetram_tweet">mod_snetram_tweet.php</filename>
